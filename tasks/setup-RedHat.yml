@@ -1,11 +1,11 @@
 ---
 - name: REDHAT | Install languages pack
-  dnf:
+  ansible.builtin.dnf:
     name:
       - langpacks-en
       - glibc-langpack-en
     state: present
 
 - name: REDHAT | Set default locale
-  command: "localectl set-locale LANG=en_US.UTF-8"
+  ansible.builtin.command: "localectl set-locale LANG=en_US.UTF-8"
   changed_when: false
