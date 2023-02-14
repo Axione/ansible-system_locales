@@ -4,14 +4,14 @@
     name: "{{ locales_dependencies }}"
     state: present
 
-- name: DEBIAN | Install language packs
+- name: UBUNTU | Install language packs
   ansible.builtin.package:
     name: "{{ locales_language_packs_present }}"
     state: present
   when: ansible_distribution == 'Ubuntu'
   notify: update locales
 
-- name: DEBIAN | Remove language packs
+- name: UBUNTU | Remove language packs
   ansible.builtin.package:
     name: "{{ locales_language_packs_absent }}"
     state: absent
