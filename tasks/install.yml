@@ -1,8 +1,8 @@
 ---
-- import_tasks: setup-RedHat.yml
+- import_tasks: setup-redhat.yml
   when:
     - ansible_os_family in ["RedHat", "Rocky", "OracleLinux"]
     - ansible_distribution_major_version != "7"
 
-- import_tasks: setup-Debian.yml
+- import_tasks: setup-debian.yml
   when: ansible_os_family == 'Debian'

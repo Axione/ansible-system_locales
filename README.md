@@ -19,6 +19,8 @@ none
 
 See [variables](/defaults/main.yml) for more details.
 
+With default variables, this role dont change anything on the system. You need to set the config variables like in the exemple in order to start configuration.
+
 ## Examples
 
         ---
@@ -28,6 +30,13 @@ See [variables](/defaults/main.yml) for more details.
           gather_facts: true
           roles:
             - role: ansible-system_locales
+          vars:
+            locales_present:
+              - en_US.UTF-8
+              - fr_FR.UTF-8
+            locales_default:
+              lang: en_US.UTF-8
+
 
 
 ## License

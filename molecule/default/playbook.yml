@@ -6,3 +6,9 @@
 
   roles:
     - role: ansible-system_locales
+
+  vars:
+    locales_present:
+      - fr_FR.UTF-8
+    locales_default:
+      lang: fr_FR.UTF-8
