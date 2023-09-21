@@ -4,13 +4,13 @@
   become: true
   any_errors_fatal: true
 
-  tasks:
-    - name: Include role
-      ansible.builtin.include_role:
-        name: ansible-system_locales
-
   vars:
     locales_present:
       - fr_FR.UTF-8
     locales_default:
       lang: fr_FR.UTF-8
+
+  tasks:
+    - name: Include role
+      ansible.builtin.include_role:
+        name: ansible-system_locales
