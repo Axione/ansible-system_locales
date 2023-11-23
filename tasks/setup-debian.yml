@@ -3,6 +3,10 @@
   ansible.builtin.package:
     name: "{{ locales_dependencies }}"
     state: present
+  register: pkg_result
+  retries: 12
+  delay: 10
+  until: pkg_result is success
   when:
     - locales_present is defined
     - locales_present | length > 0
@@ -13,6 +17,10 @@
       - "language-pack-{{ item.split('_')[:1] | join('') }}"
       - "language-pack-{{ item.split('_')[:1] | join('') }}-base"
     state: present
+  register: pkg_result
+  retries: 12
+  delay: 10
+  until: pkg_result is success
   with_items: "{{ locales_present }}"
   when:
     - ansible_distribution == 'Ubuntu'
@@ -26,6 +34,10 @@
       - "language-pack-{{ item.split('_')[:1] | join('') }}"
       - "language-pack-{{ item.split('_')[:1] | join('') }}-base"
     state: absent
+  register: pkg_result
+  retries: 12
+  delay: 10
+  until: pkg_result is success
   with_items: "{{ locales_absent }}"
   when:
     - ansible_distribution == 'Ubuntu'

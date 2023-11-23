@@ -3,6 +3,10 @@
   ansible.builtin.dnf:
     name: "{{ item }}"
     state: present
+  register: pkg_result
+  retries: 12
+  delay: 10
+  until: pkg_result is success
   with_items: "{{ locales_language_packs_present }}"
 
 - name: REDHAT | Set default locale
