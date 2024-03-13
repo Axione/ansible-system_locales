@@ -1,4 +1,5 @@
 ---
-- name: update locales
+- name: Update locales
   ansible.builtin.command: >
     dpkg-reconfigure --frontend noninteractive locales
+  changed_when: false

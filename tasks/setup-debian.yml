@@ -26,7 +26,7 @@
     - ansible_distribution == 'Ubuntu'
     - locales_present is defined
     - locales_present | length > 0
-  notify: update locales
+  notify: Update locales
 
 - name: "UBUNTU | Remove language packs"
   ansible.builtin.package:
@@ -43,7 +43,7 @@
     - ansible_distribution == 'Ubuntu'
     - locales_absent is defined
     - locales_absent | length > 0
-  notify: update locales
+  notify: Update locales
 
 - name: "DEBIAN | Detect locale gen file"
   ansible.builtin.stat:
