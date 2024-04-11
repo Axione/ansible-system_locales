@@ -1,7 +1,0 @@
----
-locales_language_packs_present:
-  - language-pack-en
-  - language-pack-en-base
-  - language-pack-fr
-  - language-pack-fr-base
-locales_language_packs_absent: []

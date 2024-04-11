@@ -1,7 +1,0 @@
----
-locales_language_packs_present:
-  - langpacks-en
-  - glibc-langpack-en
-  - langpacks-fr
-  - glibc-langpack-fr
-locales_language_packs_absent: []
