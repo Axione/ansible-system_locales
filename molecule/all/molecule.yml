@@ -80,6 +80,8 @@ platforms:
     pre_build_image: true
     image: lotusnoir/ansible_molecule_test_images:oraclelinux8
     docker_host: "${DOCKER_HOST:-unix://var/run/docker.sock}"
+    privileged: true
+    capabilities: ['NET_ADMIN']
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:rw
     groups:
@@ -88,6 +90,8 @@ platforms:
     pre_build_image: true
     image: lotusnoir/ansible_molecule_test_images:oraclelinux9
     docker_host: "${DOCKER_HOST:-unix://var/run/docker.sock}"
+    privileged: true
+    capabilities: ['NET_ADMIN']
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:rw
     groups:
