@@ -5,10 +5,10 @@
       - "langpacks-{{ item.split('_')[:1] | join('') }}"
       - "glibc-langpack-{{ item.split('_')[:1] | join('') }}"
     state: present
-  register: pkg_result
+  register: __pkg_result
   retries: 12
   delay: 10
-  until: pkg_result is success
+  until: __pkg_result is success
   with_items: "{{ locales_present }}"
   when:
     - locales_present is defined
@@ -20,10 +20,10 @@
       - "langpacks-{{ item.split('_')[:1] | join('') }}"
       - "glibc-langpack-{{ item.split('_')[:1] | join('') }}"
     state: absent
-  register: pkg_result
+  register: __pkg_result
   retries: 12
   delay: 10
-  until: pkg_result is success
+  until: __pkg_result is success
   with_items: "{{ locales_absent }}"
   when:
     - locales_absent is defined

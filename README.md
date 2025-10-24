@@ -22,6 +22,7 @@
 ## Description
 
 Configure system language
+
 ## Requirements
 
 none
@@ -48,7 +49,6 @@ With default variables, this role dont change anything on the system. You need t
               - fr_FR.UTF-8
             locales_default:
               lang: en_US.UTF-8
-
 
 
 ## License
